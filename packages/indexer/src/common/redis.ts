@@ -14,22 +14,26 @@ export const redis = new Redis(config.redisUrl, {
   enableReadyCheck: false,
   // To avoid annoying timeout errors
   connectTimeout: process.env.LOCAL_TESTING ? 1000 * 1000 : undefined,
+  family: 0,
 });
 
 export const redisSubscriber = new Redis(config.redisUrl, {
   maxRetriesPerRequest: null,
   enableReadyCheck: false,
+  family: 0,
 });
 
 // Websocket redis
 export const redisWebsocketPublisher = new Redis(config.redisWebsocketUrl, {
   maxRetriesPerRequest: null,
   enableReadyCheck: false,
+  family: 0,
 });
 
 export const redisWebsocketClient = new Redis(config.redisWebsocketUrl, {
   maxRetriesPerRequest: null,
   enableReadyCheck: false,
+  family: 0,
 });
 
 // Rate limiter redis
@@ -38,17 +42,20 @@ export const rateLimitRedis = new Redis(config.rateLimitRedisUrl, {
   enableReadyCheck: false,
   enableOfflineQueue: false,
   commandTimeout: 600,
+  family: 0,
 });
 
 // All chains sync redis
 export const allChainsSyncRedis = new Redis(config.allChainsSyncRedisUrl, {
   maxRetriesPerRequest: null,
   enableReadyCheck: false,
+  family: 0,
 });
 
 export const allChainsSyncRedisSubscriber = new Redis(config.allChainsSyncRedisUrl, {
   maxRetriesPerRequest: null,
   enableReadyCheck: false,
+  family: 0,
 });
 
 // https://redis.io/topics/distlock
